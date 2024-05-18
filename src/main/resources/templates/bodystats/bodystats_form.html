@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <h1>FitHubHome</h1>
+</header>
+<div class="main-content">
+    <div class="container">
+        <h2>Select Profile</h2>
+        <form th:action="@{/bodystats}" method="post">
+            <div class="form-group">
+                <label for="profileId">Profile ID:</label>
+                <select id="profileId" name="profileId" class="form-control">
+                    <option th:each="id : ${profileIds}" th:value="${id}" th:text="${id}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">View Latest Body Stats</button>
+            </div>
+        </form>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 FitHubHome</p>
+</footer>
+</body>
+</html>

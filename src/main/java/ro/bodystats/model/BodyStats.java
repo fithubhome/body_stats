@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name = "profiles")
+@Table(name = "bodystats")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,13 +25,12 @@ public class BodyStats {
     private Double weight;
     private Double muscleMass;
     private Double fatPercentage;
-    private Double calf;
     private Double waist;
     private Double chest;
     private Double leftArm;
     private Double rightArm;
-    private Double leftTight;
-    private Double rightTight;
+    private Double leftThigh;
+    private Double rightThigh;
     private Double leftCalf;
     private Double rightCalf;
 }
