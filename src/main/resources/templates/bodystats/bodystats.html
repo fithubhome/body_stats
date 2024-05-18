@@ -3,6 +3,7 @@
 <head>
     <title>Body Stats</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap">
 </head>
 <body>
 <header>
@@ -12,24 +13,65 @@
     <div class="container">
         <h2>Latest Body Stats</h2>
         <div th:if="${bodyStats != null}">
-            <p><strong>Register Day:</strong> <span th:text="${#dates.format(bodyStats.registerDay, 'yyyy-MM-dd')}"></span></p>
-            <p><strong>BMI:</strong> <span th:text="${bodyStats.bmi}"></span></p>
-            <p><strong>Weight:</strong> <span th:text="${bodyStats.weight}"></span></p>
-            <p><strong>Muscle Mass:</strong> <span th:text="${bodyStats.muscleMass}"></span></p>
-            <p><strong>Fat Percentage:</strong> <span th:text="${bodyStats.fatPercentage}"></span></p>
-            <p><strong>Waist:</strong> <span th:text="${bodyStats.waist}"></span></p>
-            <p><strong>Chest:</strong> <span th:text="${bodyStats.chest}"></span></p>
-            <p><strong>Left Arm:</strong> <span th:text="${bodyStats.leftArm}"></span></p>
-            <p><strong>Right Arm:</strong> <span th:text="${bodyStats.rightArm}"></span></p>
-            <p><strong>Left Thigh:</strong> <span th:text="${bodyStats.leftThigh}"></span></p>
-            <p><strong>Right Thigh:</strong> <span th:text="${bodyStats.rightThigh}"></span></p>
-            <p><strong>Left Calf:</strong> <span th:text="${bodyStats.leftCalf}"></span></p>
-            <p><strong>Right Calf:</strong> <span th:text="${bodyStats.rightCalf}"></span></p>
+            <table class="stats-table">
+                <tr>
+                    <th>Register Day</th>
+                    <td><span th:text="${#dates.format(bodyStats.registerDay, 'yyyy-MM-dd')}"></span></td>
+                </tr>
+                <tr>
+                    <th>BMI</th>
+                    <td><span th:text="${bodyStats.bmi}"></span></td>
+                </tr>
+                <tr>
+                    <th>Weight</th>
+                    <td><span th:text="${bodyStats.weight}"></span></td>
+                </tr>
+                <tr>
+                    <th>Muscle Mass</th>
+                    <td><span th:text="${bodyStats.muscleMass}"></span></td>
+                </tr>
+                <tr>
+                    <th>Fat Percentage</th>
+                    <td><span th:text="${bodyStats.fatPercentage}"></span></td>
+                </tr>
+                <tr>
+                    <th>Waist</th>
+                    <td><span th:text="${bodyStats.waist}"></span></td>
+                </tr>
+                <tr>
+                    <th>Chest</th>
+                    <td><span th:text="${bodyStats.chest}"></span></td>
+                </tr>
+                <tr>
+                    <th>Left Arm</th>
+                    <td><span th:text="${bodyStats.leftArm}"></span></td>
+                </tr>
+                <tr>
+                    <th>Right Arm</th>
+                    <td><span th:text="${bodyStats.rightArm}"></span></td>
+                </tr>
+                <tr>
+                    <th>Left Thigh</th>
+                    <td><span th:text="${bodyStats.leftThigh}"></span></td>
+                </tr>
+                <tr>
+                    <th>Right Thigh</th>
+                    <td><span th:text="${bodyStats.rightThigh}"></span></td>
+                </tr>
+                <tr>
+                    <th>Left Calf</th>
+                    <td><span th:text="${bodyStats.leftCalf}"></span></td>
+                </tr>
+                <tr>
+                    <th>Right Calf</th>
+                    <td><span th:text="${bodyStats.rightCalf}"></span></td>
+                </tr>
+            </table>
         </div>
         <p th:if="${bodyStats == null}">No body stats available.</p>
         <div class="nav-links">
-            <a th:href="@{/bodystats/history(profileId=${selectedProfileId})}">View Body Stats History</a> |
-            <a th:href="@{/bodystats/new(profileId=${selectedProfileId})}">Add New Body Stats</a>
+            <a th:href="@{/bodystats/history(profileId=${selectedProfileId})}" class="btn">View Body Stats History</a>
+            <a th:href="@{/bodystats/new(profileId=${selectedProfileId})}" class="btn">Add New Body Stats</a>
         </div>
     </div>
 </div>
