@@ -28,8 +28,8 @@
         </div>
         <p th:if="${bodyStats == null}">No body stats found.</p>
         <div class="nav-links">
-            <a th:href="@{/bodystats/history(profileId=${selectedProfileId})}">View Body Stats History</a> |
-            <a th:href="@{/bodystats/new(profileId=${selectedProfileId})}">Add New Body Stats</a>
+            <a th:href="@{/bodystats/history(profileId=${profileId})}">View Body Stats History</a> |
+            <a th:href="@{/bodystats/new(profileId=${profileId})}">Add New Body Stats</a>
         </div>
     </div>
 </div>

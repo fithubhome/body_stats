@@ -12,8 +12,8 @@
 <div class="main-content">
     <div class="container">
         <h2>New Body Stats</h2>
-        <form th:action="@{/bodystats/new(profileId=${selectedProfileId})}" th:object="${bodyStats}" method="post">
-            <input type="hidden" name="profileId" th:value="${selectedProfileId}" />
+        <form th:action="@{/bodystats/new(profileId=${profileId})}" th:object="${bodyStats}" method="post">
+            <input type="hidden" name="profileId" th:value="${profileId}" />
             <div class="form-group">
                 <label for="registerDay">Register Day:</label>
                 <input type="date" id="registerDay" name="registerDay" th:field="*{registerDay}" required>

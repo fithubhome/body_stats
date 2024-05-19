@@ -242,9 +242,10 @@ ul li span {
     display: flex;
     align-items: center;
     font-size: 18px;
+    margin-bottom: 1.2em;
 }
 
-back-link:hover {
+.back-link:hover {
     text-decoration: underline;
 }
 

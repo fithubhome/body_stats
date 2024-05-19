@@ -11,6 +11,9 @@
 </header>
 <div class="main-content">
     <div class="container">
+        <a class="back-link" th:href="@{http://localhost:8080/dashboard}">
+            <span>&#8592;</span> Back to Dashboard
+        </a>
         <h2>Latest Body Stats</h2>
         <div th:if="${bodyStats != null}">
             <table class="stats-table">
@@ -70,8 +73,8 @@
         </div>
         <p th:if="${bodyStats == null}">No body stats available.</p>
         <div class="nav-links">
-            <a th:href="@{/bodystats/history(profileId=${selectedProfileId})}" class="btn">View Body Stats History</a>
-            <a th:href="@{/bodystats/new(profileId=${selectedProfileId})}" class="btn">Add New Body Stats</a>
+            <a th:href="@{/bodystats/history(profileId=${profileId})}" class="btn">View Body Stats History</a>
+            <a th:href="@{/bodystats/new(profileId=${profileId})}" class="btn">Add New Body Stats</a>
         </div>
     </div>
 </div>

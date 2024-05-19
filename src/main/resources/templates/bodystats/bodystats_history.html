@@ -28,7 +28,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr th:each="bodyStats : ${bodyStatsList}" th:attr="data-id=${bodyStats.id},data-profile-id=${selectedProfileId}" onclick="goToDetails(this)">
+      <tr th:each="bodyStats : ${bodyStatsList}" th:attr="data-id=${bodyStats.id},data-profile-id=${profileId}" onclick="goToDetails(this)">
         <td th:text="${#dates.format(bodyStats.registerDay, 'yyyy-MM-dd')}"></td>
         <td th:text="${bodyStats.bmi}"></td>
         <td th:text="${bodyStats.weight}"></td>
@@ -36,8 +36,8 @@
       </tbody>
     </table>
     <div class="nav-links">
-      <a th:href="@{/bodystats(newProfileId=${selectedProfileId})}" class="btn">Back to Body Stats</a>
-      <a th:href="@{/bodystats/new(profileId=${selectedProfileId})}" class="btn">Add New Body Stats</a>
+      <a th:href="@{/bodystats(profileId=${profileId})}" class="btn">Back to Body Stats</a>
+      <a th:href="@{/bodystats/new(profileId=${profileId})}" class="btn">Add New Body Stats</a>
     </div>
   </div>
 </div>
