@@ -6,12 +6,18 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.2</version>
+        <version>3.2.4</version>
     </parent>
 
     <groupId>ro.fithubhome</groupId>
     <artifactId>body-stats</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+<!--
+    <bean id="" class="" scope="">
+        collaborations and configurations
+    </bean>>
+ -->
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -29,9 +35,9 @@
     </build>
 
     <dependencies>
-        <dependency>    <groupId>org.springframework.boot</groupId>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.2.5</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
