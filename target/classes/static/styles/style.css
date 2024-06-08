@@ -1,0 +1,26 @@
+*{
+margin:0
+}
+header,footer{
+background-color: gray;
+padding: 15px;
+display: flex;
+justify-content: center;
+gap: 10px
+}
+body{
+display: flex;
+flex-direction: column:
+main-height: 100vh;
+}
+main{
+flex: 1;
+max-width: 700px;
+margin: 0 auto
+padding: 10px;
+}
+p.error{
+color: red;
+font-size: 10px;
+display: none;
+}

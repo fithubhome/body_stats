@@ -16,12 +16,15 @@
 <main>
     <h2>Body Status</h2>
     <p>Enter your data and click OK:</p><br>
-    <form name="formular" onsubmit="retun validateForm()">
+    <form method = "POST" th:action = "@{/bodystats}" th:object="${bodyStatsDTO}" name="formular" onsubmit="retun validateForm()">
+        <h2 th:unless="${param.error}">Body Stats Form</h2>
+        <h2 th:if="${param.error}">Try again</h2>
+
         <form action="/save-data" method="post"></form>
 
         <form action="/save-data" method="get" onsubmit="return validateForm()">
             <label for="id">ID</label>
-            <input type="nume"></input><br>
+            <input type="nume" th:field="*{profileId}" placeholder="Id"></input><br>
             <p id="error">ID must contain your customer ID number</p>
             <label for="prenume">ProfileID</label>
             <input type="prenume"></input><br>
@@ -57,6 +60,8 @@
         </form>
 </main>
 <footer>
+    <button type="submit">Submit data</button>
+
     <button onclick="myFunction()">Save</button>
     <button onclick="myFunction()">Cancel</button>
 </footer>

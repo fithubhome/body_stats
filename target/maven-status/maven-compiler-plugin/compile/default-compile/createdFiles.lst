@@ -1,0 +1,10 @@
+ro\fithubhome\bodystats\repository\BodyRepository$1.class
+ro\fithubhome\bodystats\model\dto\BodyStatsDTO.class
+ro\fithubhome\bodystats\repository\BodyRepository.class
+ro\fithubhome\bodystats\Application.class
+ro\fithubhome\bodystats\service\Logger.class
+ro\fithubhome\bodystats\exception\EntityNotFoundException.class
+ro\fithubhome\bodystats\service\BodyService.class
+ro\fithubhome\bodystats\controller\BodyController.class
+ro\fithubhome\bodystats\exception\EntityAlreadyExistsException.class
+ro\fithubhome\bodystats\model\Body.class
