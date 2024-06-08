@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="866ad5bd-ec62-43d3-8475-f13fa5e8e603" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/LocaleConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/dto/BodyStatsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/exception/EntityAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/exception/EntityAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/exception/EntityNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/exception/EntityNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/model/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/Body.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/repository/BodyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/repository/BodyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/service/BodyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/service/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/ui/DisplayStatsUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/ui/EnterStatsUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/ui/MenuUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
