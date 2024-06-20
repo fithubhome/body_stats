@@ -15,8 +15,9 @@ public class BodyService {
     private BodyRepository bodyRepository;
 
     public Body createBodyStats(Body body) throws EntityAlreadyExistsException {
-        return bodyRepository.createBodyStats(body);
+        return bodyRepository.save(body);
     }
+ /*
     public Body requestBodyStats(String data) throws EntityNotFoundException {
         return bodyRepository.requestBodyStats(data);
     }
@@ -32,5 +33,5 @@ public class BodyService {
     public Body deleteBodyStats(String data) throws EntityNotFoundException {
         return bodyRepository.deleteBodyStats(data);
     }
-
+*/
 }

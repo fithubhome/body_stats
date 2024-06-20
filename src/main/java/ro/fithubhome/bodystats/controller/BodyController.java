@@ -3,6 +3,7 @@ package ro.fithubhome.bodystats.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ro.fithubhome.bodystats.exception.EntityAlreadyExistsException;
 import ro.fithubhome.bodystats.exception.EntityNotFoundException;
@@ -17,7 +18,8 @@ import java.util.List;
 public class BodyController {
     @Autowired
     private BodyService bodyService;
-
+    @Autowired
+    private Body body;
     //POST Create
     @PostMapping()
     /*@Validated
@@ -44,22 +46,41 @@ public class BodyController {
     }
 
     //GET Request
-    @GetMapping("/{profileID}")
-    ResponseEntity<Body> requestedBodyStats(@PathVariable String profileID) {
-        Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), profileID));
+
+    @GetMapping("/history")
+    public String getBodyStatsHistory(Model model)  {
+        model.addAttribute("body", body);
+        return "bodystats-history";
+    }
+/*    @GetMapping("/records")
+    private ModelAndView getBodyStatsRecords() {
+        ModelAndView modelAndView = new ModelAndView("templates/bodystats-records.html");
+        modelAndView.addObject("bodyStatsRecords", bodyService.requestBodyStats(id));
+
+        return modelAndView;
+    }
+
+*/
+/*    @GetMapping("/{id}")
+    ResponseEntity<Body> requestedBodyStats(@PathVariable String id) {
+        Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), id));
 
         Body requestedBodyStats;
+
         try {
-            requestedBodyStats = bodyService.requestBodyStats(profileID);
+
+            requestedBodyStats = bodyService.requestBodyStats(id);
         } catch (EntityNotFoundException ex) {
-            Logger.logError(String.format("%s - GET request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), profileID, ex.getMessage()));
+            Logger.logError(String.format("%s - GET request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), id, ex.getMessage()));
             return ResponseEntity
                     .status(404)
                     .body(null);
         }
-        return ResponseEntity
+     return ResponseEntity
                 .status(200)
                 .body(requestedBodyStats);
+
+
     }
     @GetMapping()
     public ResponseEntity<List<Body>> requestsBodyStats() {
@@ -87,16 +108,16 @@ public class BodyController {
                 .body(updateBodyStats);
     }
 
-    //
-    @DeleteMapping("/{profileId}")
-    ResponseEntity<Body> deleteBodyStats(@PathVariable String profileId) {
-        Logger.logInfo(String.format("%s - received DELETE request for city: \"%s\"", this.getClass().getSimpleName(), profileId));
+    //DELETE
+    @DeleteMapping("/{id}")
+    ResponseEntity<Body> deleteBodyStats(@PathVariable String id) {
+        Logger.logInfo(String.format("%s - received DELETE request for city: \"%s\"", this.getClass().getSimpleName(), id));
 
         Body deletedBodyStats;
         try {
-            deletedBodyStats = bodyService.deleteBodyStats(profileId);
+            deletedBodyStats = bodyService.deleteBodyStats(id);
         } catch (EntityNotFoundException ex) {
-            Logger.logError(String.format("%s - DELETE request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), profileId, ex.getMessage()));
+            Logger.logError(String.format("%s - DELETE request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), id, ex.getMessage()));
             return ResponseEntity
                     .status(404)
                     .body(null);
@@ -111,5 +132,7 @@ public class BodyController {
         System.err.println("Exception in \"ProfileID\" controller" +ex);
         return "error.html";
     }
+
+ */
 
 }

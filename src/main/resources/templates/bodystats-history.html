@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BodyStats</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <h1 style="color: white;">Welcome to FitHubHome</h1>
+</header>
+
+<a href="index.html">--- HOME ---</a>
+
+<div class="welcome-page">
+    <div class="content">
+        <div class="profile-details">
+            <p><strong>First Name:</strong> <span th:text="${body.id}"></span></p>
+            <p><strong>Last Name:</strong> <span th:text="${body.registerDay}"></span></p>
+            <p><strong>Gender:</strong> <span th:text="${body.startingWeight}"></span></p>
+        </div>
+
+        <div class="action-buttons">
+            <a th:href="@{/dashboard}">
+
+                <button>Back to Dashboard</button>
+            </a>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 BodyStats API</p>
+</footer>
+</body>
+</html>

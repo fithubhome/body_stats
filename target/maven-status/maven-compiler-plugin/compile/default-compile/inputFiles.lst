@@ -1,9 +1,0 @@
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\controller\BodyController.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\model\Body.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\model\dto\BodyStatsDTO.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\exception\EntityNotFoundException.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\service\BodyService.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\Application.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\exception\EntityAlreadyExistsException.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\repository\BodyRepository.java
-C:\Users\rodilas\Documents\body_stats\src\main\java\ro\fithubhome\bodystats\service\Logger.java

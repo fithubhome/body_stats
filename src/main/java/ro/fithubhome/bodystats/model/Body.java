@@ -1,15 +1,23 @@
 package ro.fithubhome.bodystats.model;
 
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "bodystats")
 @AllArgsConstructor
 @Setter
 @Getter
 public class Body  {
-    private String profileId;
+    @Id
+    private Integer id;
     private int startingWeight;
     private int registerDay;
     private int bmi;
@@ -25,7 +33,5 @@ public class Body  {
     private int leftCalf;
     private int rightCalf;
 
-    public String getProfileId() {
-        return profileId;
-    }
 }
+
