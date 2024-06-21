@@ -1,14 +1,17 @@
 package ro.fithubhome.bodystats.model;
 
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.Date;
+import java.util.UUID;
 
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "bodystats")
@@ -18,6 +21,8 @@ import javax.validation.constraints.NotNull;
 public class Body  {
     @Id
     private Integer id;
+
+    private UUID profileId;
     private int startingWeight;
     private int registerDay;
     private int bmi;
@@ -32,6 +37,11 @@ public class Body  {
     private int rightThigh;
     private int leftCalf;
     private int rightCalf;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date startDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date endDate;
 
 }
 

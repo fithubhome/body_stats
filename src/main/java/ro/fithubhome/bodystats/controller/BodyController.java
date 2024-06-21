@@ -12,6 +12,7 @@ import ro.fithubhome.bodystats.model.Body;
 import ro.fithubhome.bodystats.service.BodyService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/bodystats")
@@ -61,25 +62,22 @@ public class BodyController {
     }
 
 */
-/*    @GetMapping("/{id}")
-    ResponseEntity<Body> requestedBodyStats(@PathVariable String id) {
+   @GetMapping("/{id}")
+   ResponseEntity<Optional<Body>> requestedBodyStats(@PathVariable String id) {
         Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), id));
 
-        Body requestedBodyStats;
+        Optional<Body> requestedBodyStats;
 
-        try {
-
-            requestedBodyStats = bodyService.requestBodyStats(id);
-        } catch (EntityNotFoundException ex) {
-            Logger.logError(String.format("%s - GET request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), id, ex.getMessage()));
-            return ResponseEntity
-                    .status(404)
-                    .body(null);
-        }
-     return ResponseEntity
+       requestedBodyStats = bodyService.getBodyStatsById(Integer.valueOf(id));
+       /*   } catch (EntityNotFoundException ex) {
+        Logger.logError(String.format("%s - GET request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), id, ex.getMessage()));
+        return ResponseEntity
+                .status(404)
+                .body(null);
+    }*/
+       return ResponseEntity
                 .status(200)
                 .body(requestedBodyStats);
-
 
     }
     @GetMapping()
@@ -87,7 +85,7 @@ public class BodyController {
         Logger.logInfo(String.format("%s - received GET request", this.getClass().getSimpleName()));
         return ResponseEntity
                 .status(200)
-                .body(bodyService.requestsBodyStats());
+                .body(bodyService.getAllBodyStats());
     }
     //PUT
     @PutMapping()
@@ -95,14 +93,15 @@ public class BodyController {
         Logger.logInfo(String.format("%s - received PUT request", this.getClass().getSimpleName()));
 
         Body updateBodyStats;
-        try {
+        //try {
             updateBodyStats = bodyService.updateBodyStats(body);
-        } catch (EntityNotFoundException ex) {
+        //}
+        /*catch (EntityNotFoundException ex) {
             Logger.logError(String.format("%s - PUT request failed: \"%s\"", this.getClass().getSimpleName(), ex.getMessage()));
             return ResponseEntity
                     .status(404)
                     .body(null);
-        }
+        }*/
         return ResponseEntity
                 .status(200)
                 .body(updateBodyStats);
@@ -114,15 +113,15 @@ public class BodyController {
         Logger.logInfo(String.format("%s - received DELETE request for city: \"%s\"", this.getClass().getSimpleName(), id));
 
         Body deletedBodyStats;
-        try {
-            deletedBodyStats = bodyService.deleteBodyStats(id);
-        } catch (EntityNotFoundException ex) {
+    //    try {
+            deletedBodyStats = bodyService.deleteBodyStatsById(Integer.valueOf(id));
+    /*    } catch (EntityNotFoundException ex) {
             Logger.logError(String.format("%s - DELETE request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), id, ex.getMessage()));
             return ResponseEntity
                     .status(404)
                     .body(null);
         }
-        return ResponseEntity
+    */    return ResponseEntity
                 .status(200)
                 .body(deletedBodyStats);
     }
@@ -133,6 +132,5 @@ public class BodyController {
         return "error.html";
     }
 
- */
 
 }
