@@ -8,7 +8,7 @@
     function goToDetails(element) {
       const id = element.getAttribute('data-id');
       const profileId = element.getAttribute('data-profile-id');
-      window.location.href = `/bodystats/${id}?profileId=${profileId}`;
+      window.location.href = `/bodystats/${id}`;
     }
   </script>
 </head>
@@ -18,31 +18,30 @@
 </header>
 <div class="main-content">
   <div class="container">
+    <a class="back-link" th:href="@{http://localhost:8081/bodystats}">
+      <span>&#8592;</span> Back to Main
+    </a>
     <h2>Body Stats History</h2>
     <table>
       <thead>
       <tr>
         <th>Register Day</th>
-        <th>BMI</th>
-        <th>Weight</th>
+        <th>BMI (kg/m²)</th>
+        <th>Weight (kg)</th>
       </tr>
       </thead>
       <tbody>
       <tr th:each="bodyStats : ${bodyStatsList}" th:attr="data-id=${bodyStats.id},data-profile-id=${profileId}" onclick="goToDetails(this)">
-        <td th:text="${#dates.format(bodyStats.registerDay, 'yyyy-MM-dd')}"></td>
+        <td th:text="${#dates.format(bodyStats.registerDay, 'dd-MM-yyyy')}"></td>
         <td th:text="${bodyStats.bmi}"></td>
         <td th:text="${bodyStats.weight}"></td>
       </tr>
       </tbody>
     </table>
-    <div class="nav-links">
-      <a th:href="@{/bodystats(profileId=${profileId})}" class="btn">Back to Body Stats</a>
-      <a th:href="@{/bodystats/new(profileId=${profileId})}" class="btn">Add New Body Stats</a>
-    </div>
   </div>
 </div>
 <footer>
-  <p>&copy; 2024 BodyStats API</p>
+  <p>&copy; Bodystats - API</p>
 </footer>
 </body>
 </html>

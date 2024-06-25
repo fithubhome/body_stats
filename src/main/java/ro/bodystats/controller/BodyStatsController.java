@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ro.bodystats.model.BodyStats;
 import ro.bodystats.service.BodyStatsService;
-import ro.bodystats.service.external.ExternalProfileService;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,48 +18,47 @@ import java.util.UUID;
 public class BodyStatsController {
     @Autowired
     private BodyStatsService bodyStatsService;
-    @Autowired
-    private ExternalProfileService externalProfileService;
     private static final Logger logger = LoggerFactory.getLogger(BodyStatsController.class);
+    private final UUID PROFILE_ID = UUID.randomUUID();
 
-    @GetMapping("")
-    public String getLastBodyStats(@RequestParam UUID profileId, Model model) {
-        BodyStats bodyStats = bodyStatsService.getLastBodyStats(profileId);
+    @GetMapping
+    public String getLastBodyStats(Model model) {
+        BodyStats bodyStats = bodyStatsService.getLastBodyStats(PROFILE_ID);
         model.addAttribute("bodyStats", bodyStats);
-        model.addAttribute("profileId", profileId);
-        return "/bodystats/bodystats";
+        model.addAttribute("profileId", PROFILE_ID);
+        return "/bodystats/index";
     }
 
     @GetMapping("/history")
-    public String getBodyStatsHistory(@RequestParam UUID profileId, Model model) {
-        List<BodyStats> bodyStatsList = bodyStatsService.getBodyStatsByProfileId(profileId);
+    public String getBodyStatsHistory(Model model) {
+        List<BodyStats> bodyStatsList = bodyStatsService.getBodyStatsByProfileId(PROFILE_ID);
         model.addAttribute("bodyStatsList", bodyStatsList);
-        model.addAttribute("profileId", profileId);
-        return "/bodystats/bodystats_history";
+        model.addAttribute("profileId", PROFILE_ID);
+        return "/bodystats/history";
     }
 
     @GetMapping("/{id}")
-    public String getBodyStatsById(@PathVariable UUID id, @RequestParam UUID profileId, Model model) {
+    public String getBodyStatsById(@PathVariable UUID id, Model model) {
         Optional<BodyStats> bodyStats = bodyStatsService.getBodyStatsById(id);
         model.addAttribute("bodyStats", bodyStats.orElse(null));
-        model.addAttribute("profileId", profileId);
-        return "/bodystats/bodystats_detail";
+        model.addAttribute("profileId", PROFILE_ID);
+        return "/bodystats/details";
     }
 
     @GetMapping("/new")
-    public String showNewBodyStatsForm(@RequestParam UUID profileId, Model model) {
+    public String showNewBodyStatsForm(Model model) {
         BodyStats bodyStats = new BodyStats();
-        bodyStats.setProfileId(profileId);
+        bodyStats.setProfileId(PROFILE_ID);
         model.addAttribute("bodyStats", bodyStats);
-        model.addAttribute("profileId", profileId);
-        return "/bodystats/bodystats_new";
+        model.addAttribute("profileId", PROFILE_ID);
+        return "/bodystats/new";
     }
 
     @PostMapping("/new")
-    public String createNewBodyStats(@ModelAttribute BodyStats bodyStats, @RequestParam UUID profileId) {
-        logger.info("Received profileId: {}", profileId);
-        bodyStats.setProfileId(profileId);
+    public String createNewBodyStats(@ModelAttribute BodyStats bodyStats) {
+        logger.info("Received profileId: {}", PROFILE_ID);
+        bodyStats.setProfileId(PROFILE_ID);
         bodyStatsService.saveBodyStats(bodyStats);
-        return "redirect:/bodystats/history?profileId=" + profileId;
+        return "/bodystats/index";
     }
 }

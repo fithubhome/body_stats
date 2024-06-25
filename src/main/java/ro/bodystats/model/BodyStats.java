@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.JdbcTypeCode;
 
+import java.sql.Types;
 import java.util.Date;
 import java.util.UUID;
 
@@ -17,8 +19,9 @@ import java.util.UUID;
 @AllArgsConstructor
 public class BodyStats {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @JdbcTypeCode(Types.VARCHAR)
     private UUID id;
+
     private UUID profileId;
     private Date registerDay;
     private Double bmi;
@@ -33,4 +36,11 @@ public class BodyStats {
     private Double rightThigh;
     private Double leftCalf;
     private Double rightCalf;
+
+    @PrePersist
+    public void prePersist() {
+        if (id == null) {
+            id = UUID.randomUUID();
+        }
+    }
 }
