@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="stylesheet" href="\static\css\styles.css">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title th:text="#{title.page}">Body Stats</title>
+</head>
+<body>
+
+<header>
+    <a th:href="main-index.html">Home</a>
+</header>
+
+<main>
+    <h2>Body Status</h2>
+    <a href="bodystats-history.html">--- Display status ---</a><br>
+    <a href="bodystats-records.html">--- Enter status information ---</a>
+    <p>Enter your data and click OK:</p><br>
+    <form method = "POST" th:action = "@{/bodystats}" th:object="${bodyStatsDTO}" name="formular" onsubmit="retun validateForm()">
+        <h2 th:unless="${param.error}">Body Stats Form</h2>
+        <h2 th:if="${param.error}">Try again</h2>
+
+        <form action="/save-data" method="post"></form>
+
+        <form action="/save-data" method="get" onsubmit="return validateForm()">
+            <label for="id">ID</label>
+            <input type="text" th:field="*{id}" placeholder="User Id">
+            <p id="error-message">ID must contain your customer ID number</p></input>
+            <label for="prenume">ProfileID</label>
+            <input type="text" th:text = ${requestedBodyStats}> </input>
+            <span style="font-weight:bold" th:text = ${requestedBodyStats}></span>
+            <label for="nume">Starting Weight</label>
+            <input type="text"></input>
+            <label for="nume">Register Day</label>
+            <input type="text"></input>
+            <label for="nume">BMI</label>
+            <input type="text"></input>
+            <label for="nume">Muscle Mass</label>
+            <input type="text"></input><br>
+            <label for="nume">Fat Percentage</label>
+            <input type="text"></input><br>
+            <label for="nume">Waist</label>
+            <input type="text"></input><br>
+            <label for="nume">Calf</label>
+            <input type="text"></input><br>
+            <label for="nume">Chest</label>
+            <input type="text"></input><br>
+            <label for="nume">Left Arm</label>
+            <input type="text"></input><br>
+            <label for="nume">Right Arm</label>
+            <input type="text"></input><br>
+            <label for="nume">Left Tigh</label>
+            <input type="text"></input><br>
+            <label for="nume">Right Tigh</label>
+            <input type="text"></input><br>
+            <label for="nume">Left Calf</label>
+            <input type="text"></input><br>
+            <label for="nume">Right Calf</label>
+            <input type="text"></input><br>
+            <input type="submit" value="Submit"/><br>
+        </form>
+
+
+        <a href="/bodystats-history" >history</a><br>
+        <a href="/bodystats-records" >records</a>
+
+        <button type="submit">Submit data</button>
+
+        <button onclick="myFunction()">Save</button>
+        <button onclick="myFunction()">Cancel</button>
+</main>
+
+<footer>
+    <p>&copy; 2024 BodyStats API</p>
+</footer>
+</body>
+</html>

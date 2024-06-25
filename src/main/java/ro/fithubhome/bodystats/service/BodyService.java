@@ -19,7 +19,6 @@ public class BodyService {
         return bodyRepository.save(body);
     }
 
-
     public List<Body> getAllBodyStats() {
         return bodyRepository.findAll();
     }
@@ -28,7 +27,7 @@ public class BodyService {
        return bodyRepository.requestBodyStats(data);
    }
 */
-    public Optional<Body> getBodyStatsById(Integer id) {
+    public Optional<Body> getBodyStatsById(Integer id) throws EntityNotFoundException {
         return bodyRepository.findById(id);
     }
 /*

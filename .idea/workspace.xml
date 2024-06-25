@@ -7,7 +7,6 @@
     <list default="true" id="866ad5bd-ec62-43d3-8475-f13fa5e8e603" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
