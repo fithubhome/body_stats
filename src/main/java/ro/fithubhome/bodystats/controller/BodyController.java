@@ -35,10 +35,10 @@ public class BodyController {
         Logger.logInfo(String.format("%s - received POST request", this.getClass().getSimpleName()));
 
         try {
-            Body createdWeather = bodyService.createBodyStats(body);
+            Body createdBody = bodyService.createBodyStats(body);
             return ResponseEntity
                     .status(201)
-                    .body(createdWeather);
+                    .body(createdBody);
         } catch (EntityAlreadyExistsException ex) {
             Logger.logError(String.format("%s - POST request failed: \"%s\"", this.getClass().getSimpleName(), ex.getMessage()));
             return ResponseEntity

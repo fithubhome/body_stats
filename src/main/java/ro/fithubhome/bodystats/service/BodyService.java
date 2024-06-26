@@ -1,6 +1,6 @@
 package ro.fithubhome.bodystats.service;
 
-//import jakarta.transaction.Transactional;
+
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +21,9 @@ public class BodyService {
     public Body createBodyStats(Body body) throws EntityAlreadyExistsException {
         if (bodyRepository.existsById(body.getId())) {
             throw new EntityAlreadyExistsException("Body stats with this ID already exists.");
+        } else {
+            return bodyRepository.save(body);
         }
-        return bodyRepository.save(body);
     }
     @Transactional(readOnly = true)
 
