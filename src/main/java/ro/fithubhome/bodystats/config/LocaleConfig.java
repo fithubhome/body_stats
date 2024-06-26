@@ -1,3 +1,4 @@
+/*
 package ro.fithubhome.bodystats.config;
 
 import org.apache.tomcat.util.descriptor.LocalResolver;
@@ -30,5 +31,7 @@ public class LocaleConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(localeChangeInterceptor());
+
     }
 }
+*/
