@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ro.bodystats.model.BodyStats;
 import ro.bodystats.service.BodyStatsService;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -24,6 +25,16 @@ public class BodyStatsController {
         BodyStats bodyStats = bodyStatsService.getLastBodyStats(profileId);
         if (bodyStats == null) {
             logger.info("No body stats found for profile ID: {}", profileId);
+            bodyStats = new BodyStats();
+            bodyStats.setId(UUID.randomUUID());
+            bodyStats.setProfileId(profileId);
+            bodyStats.setRegisterDay(new Date());
+            bodyStats.setBmi(17.0);
+            bodyStats.setWeight(61.0);
+            bodyStats.setMuscleMass(27.1);
+            bodyStats.setFatPercentage(12.2);
+            bodyStatsService.saveBodyStats(bodyStats);
+            logger.info("Just created a basic bodystats profile: {}", profileId);
         }
         return bodyStats;
     }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ro.bodystats.model.BodyStats;
 import ro.bodystats.repository.BodyStatsRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
