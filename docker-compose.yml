@@ -5,12 +5,12 @@ services:
     image: mysql:8.0
     container_name: bodystats
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: root
       MYSQL_DATABASE: bodystats
-      MYSQL_PASSWORD: ITea2020Home
+      MYSQL_PASSWORD: admin
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: admin
     ports:
-      - "3307:3306"
+      - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -26,8 +26,8 @@ services:
       - "8095:8095"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/bodystats?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: Simida
-      SPRING_DATASOURCE_PASSWORD: ITea2020Home
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQL8Dialect
     depends_on:
