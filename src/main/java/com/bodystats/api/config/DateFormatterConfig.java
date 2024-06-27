@@ -1,4 +1,4 @@
-package ro.bodystats.config;
+package com.bodystats.api.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;

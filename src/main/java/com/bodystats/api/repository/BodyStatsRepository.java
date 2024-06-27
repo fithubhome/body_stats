@@ -1,7 +1,7 @@
-package ro.bodystats.repository;
+package com.bodystats.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ro.bodystats.model.BodyStats;
+import com.bodystats.api.model.BodyStats;
 
 import java.util.List;
 import java.util.UUID;

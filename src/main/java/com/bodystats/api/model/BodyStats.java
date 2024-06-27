@@ -1,4 +1,4 @@
-package ro.bodystats.model;
+package com.bodystats.api.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

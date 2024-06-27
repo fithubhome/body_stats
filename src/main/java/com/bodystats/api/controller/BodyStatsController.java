@@ -1,11 +1,11 @@
-package ro.bodystats.controller;
+package com.bodystats.api.controller;
 
+import com.bodystats.api.model.BodyStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ro.bodystats.model.BodyStats;
-import ro.bodystats.service.BodyStatsService;
+import com.bodystats.api.service.BodyStatsService;
 
 import java.util.Date;
 import java.util.List;
