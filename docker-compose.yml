@@ -1,49 +1,82 @@
-version: '3.8'
+########################################################################################################################
+#   OLD CONFIG                                                                                                         #
+########################################################################################################################
+
+#version: '3.8'
+#
+#services:
+#  mysql:
+#    image: mysql:8.0
+#    container_name: bodystats
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_USER: root
+#      MYSQL_DATABASE: bodystats
+#      MYSQL_PASSWORD: ITea2020Home
+#    ports:
+#      - "3307:3306"
+#    volumes:
+#      - mysql_data:/var/lib/mysql
+#    networks:
+#      - bodystats_network
+#
+#  app:
+#    image: bodystats:latest
+#    container_name: bodystats
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - "8095:8095"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/bodystats?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+#      SPRING_DATASOURCE_USERNAME: Simida
+#      SPRING_DATASOURCE_PASSWORD: ITea2020Home
+#      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+#      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQL8Dialect
+#    depends_on:
+#      - mysql
+#    networks:
+#      - bodystats_network
+#
+#volumes:
+#  mysql_data:
+#
+#networks:
+#  gym_network:
+
+########################################################################################################################
+#   NEW CONFIG                                                                                                         #
+########################################################################################################################
+
+version: '3'
 
 services:
-  mysql:
-    image: mysql:8.0
-    container_name: bodystats
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: root
-      MYSQL_DATABASE: bodystats
-      MYSQL_PASSWORD: ITea2020Home
-    ports:
-      - "3307:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - bodystats_network
 
-  app:
-    image: bodystats:latest
-    container_name: bodystats
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8095:8095"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/bodystats?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: Simida
-      SPRING_DATASOURCE_PASSWORD: ITea2020Home
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQL8Dialect
-    depends_on:
-      - mysql
-    networks:
-      - bodystats_network
+  body-stats-api-app:
+    build: .                          # Use Dockerfile to build image
+    image: body-stats-api:latest      # Name of the resulting image
+    container_name: application       # Name of the resulting container
+    ports:                            # External/internal port mapping:
+      - 8095:8095
+    depends_on:                       # Service(s) that this service depends on:
+      body-stats-api-db:
+        condition: service_healthy
+    networks:                         # Local network for services (containers)
+      - network
 
-volumes:
-  mysql_data:
+  body-stats-api-db:
+    image: mysql:latest               # Image used to create container (from Docker registry)
+    container_name: database
+    environment:                      # Environment variables for the service (container):
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=bodystats
+    healthcheck:                      # Command that, when ran, proves service (container) is healthy
+      test: [ "CMD", "echo", "MySQL database container is healthy" ]
+    networks:
+      - network
 
 networks:
-  gym_network:
 
-
-
-
-
-
-
+  network:
+    driver: bridge
