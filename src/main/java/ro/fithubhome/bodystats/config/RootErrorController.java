@@ -10,4 +10,8 @@ public class RootErrorController implements ErrorController {
     private String handleError() {
         return "error/error.html";
     }
+    @RequestMapping("/")
+    private String home() {
+        return "error/error.html";
+    }
 }

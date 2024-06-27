@@ -1,6 +1,6 @@
 package ro.fithubhome.bodystats.service;
 
-//import jakarta.transaction.Transactional;
+
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,9 +59,5 @@ public class BodyService {
         bodyRepository.deleteById(id);
         return null;
     }
-/*
-    public Body deleteBodyStats(String data) throws EntityNotFoundException {
-        return bodyRepository.deleteBodyStats(data);
-    }
-*/
+
 }
