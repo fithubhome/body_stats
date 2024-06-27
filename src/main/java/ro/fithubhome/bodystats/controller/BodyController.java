@@ -4,8 +4,6 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ro.fithubhome.bodystats.exception.EntityAlreadyExistsException;
 import ro.fithubhome.bodystats.exception.EntityNotFoundException;
@@ -14,18 +12,33 @@ import ro.fithubhome.bodystats.model.Body;
 import ro.fithubhome.bodystats.service.BodyService;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
-@Controller
+@RestController
 @RequestMapping("/bodystats")
 public class BodyController {
     @Autowired
     private BodyService bodyService;
 
     //POST Create
-    @PostMapping()
-    public ResponseEntity<Body> createBodyStats( @ModelAttribute Body body) {
+    @GetMapping("/record")
+    public void createBodyStats(@RequestBody Body body) throws EntityAlreadyExistsException {
+        Logger.logInfo(String.format("%s - received POST request", this.getClass().getSimpleName()));
+        bodyService.createBodyStats(body);
+/*
+        try {
+            bodyService.createBodyStats(body);
+           // return "redirect:/";
+        } catch (EntityAlreadyExistsException ex) {
+            Logger.logError(String.format("%s - POST request failed: \"%s\"", this.getClass().getSimpleName(), ex.getMessage()));
+           // model.addAttribute("errorMessage", "Body stats already exist.");
+          //  return "error";  // Replace with your actual error page view name
+        }
+        return body;*/
+    }
+
+   /* @PostMapping()
+    public ResponseEntity<Body> createBodyStats(@RequestBody Body body) {  // @  ModelAttribute
         Logger.logInfo(String.format("%s - received POST request", this.getClass().getSimpleName()));
 
         try {
@@ -39,45 +52,43 @@ public class BodyController {
                     .status(409)
                     .body(null);
         }
-    }
+    }*/
 
     //GET Request
-
-    @GetMapping("/history")
-    public String getBodyStatsHistory(Model model) {
-        model.addAttribute("body", bodyService.getAllBodyStats());
-        return "bodystats-history";
-    }
-    @GetMapping("/record")
-    public String getBodyStatsRecords(Model model, Body body) {
-    //    model.addAttribute("body", bodyService.getAllBodyStats());
-        return "bodystats-records";
-    }
-    @GetMapping("/{id}")
-    public ResponseEntity<Body> requestedBodyStats(@PathVariable UUID id) {
-        Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), id));
-       try {
-           Body requestedBodyStats = bodyService.getBodyStatsById(id).orElseThrow(() -> new EntityNotFoundException("Body stats"));
-           return ResponseEntity
-                    .status(200)
-                    .body(requestedBodyStats);
-        } catch (EntityNotFoundException ex) {
-           Logger.logError(String.format("%s - GET request failed for ID \"%s\": \"%s\"", this.getClass().getSimpleName(), id, ex.getMessage()));
-           return ResponseEntity
-                    .status(404)
-                    .body(null);
-        }
-
-    }
-
-    @GetMapping()
+  /*  @GetMapping()
     public ResponseEntity<List<Body>> requestsBodyStats() {
         Logger.logInfo(String.format("%s - received GET request", this.getClass().getSimpleName()));
         List<Body> bodyStatsList = bodyService.getAllBodyStats();
         return ResponseEntity
                 .status(200)
                 .body(bodyStatsList);
+    }*/
+
+    @GetMapping()
+    public ResponseEntity<Body> requestedBodyStats(@RequestBody UUID profileId) {
+        Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), profileId));
+        try {
+            Body requestedBodyStats = bodyService.getBodyStatsById(profileId).orElseThrow(() -> new EntityNotFoundException("Body stats"));
+            return ResponseEntity
+                    .status(200)
+                    .body(requestedBodyStats);
+        } catch (EntityNotFoundException ex) {
+            Logger.logError(String.format("%s - GET request failed for ID \"%s\": \"%s\"", this.getClass().getSimpleName(), profileId, ex.getMessage()));
+            return ResponseEntity
+                    .status(404)
+                    .body(null);
+        }
     }
+/*    @GetMapping("/history")
+    public String getBodyStatsHistory(Model model) {
+        model.addAttribute("body", bodyService.getAllBodyStats());
+        return "bodystats-history";
+    }
+    @GetMapping("/record")
+    public String getBodyStatsRecords(Model model, Body body) {
+        return "bodystats-records";
+    }
+*/
 
     //PUT
     @PutMapping()

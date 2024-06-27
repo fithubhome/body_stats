@@ -32,6 +32,9 @@ public class Body  {
     @JdbcTypeCode(Types.VARCHAR)
     private UUID id;
 
+    @JdbcTypeCode(Types.VARCHAR)
+    private UUID profileId;
+
     @NotNull
     @Column(name = "starting_weight", nullable = false)
     private int startingWeight;
@@ -87,10 +90,5 @@ public class Body  {
     @NotNull
     @Column(name = "right_calf", nullable = false)
     private int rightCalf;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date startDate;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date endDate;
 
 }

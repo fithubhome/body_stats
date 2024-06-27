@@ -6,30 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="866ad5bd-ec62-43d3-8475-f13fa5e8e603" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/BeanConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/repository/BodyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/repository/BodyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bodystats-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bodystats-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bodystats-records.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bodystats-records.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/BeanConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/RootController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/RootErrorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/controller/BodyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/controller/BodyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/model/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/model/Body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/repository/BodyRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/repository/BodyRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/service/BodyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/service/BodyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bodystats-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bodystats-history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bodystats-records.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bodystats-records.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,16 +134,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignore file" />
     <option name="LAST_COMMIT_MESSAGE" value="gitignore file" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -18,25 +18,17 @@ public class BodyService {
     @Autowired
     private BodyRepository bodyRepository;
 
-
     @Transactional
     public Body createBodyStats(Body body) throws EntityAlreadyExistsException {
-       /* if (bodyRepository.existsById(body.getId())) {
-            throw new EntityAlreadyExistsException("Body stats with this ID already exists.");
-        } else {*/
             return bodyRepository.save(body);
-
     }
 
     @Transactional(readOnly = true)
-
     public List<Body> getAllBodyStats() {
-
         return bodyRepository.findAll();
     }
 
     @Transactional(readOnly = true)
-
     public Optional<Body> getBodyStatsById(UUID id) throws EntityNotFoundException {
         Optional<Body> body = bodyRepository.findById(id);
         if (body.isEmpty()) {
@@ -46,7 +38,6 @@ public class BodyService {
     }
 
     @Transactional
-
     public Body updateBodyStats(Body body) throws EntityNotFoundException {
         if (!bodyRepository.existsById(body.getId())) {
             throw new EntityNotFoundException("Body stats not found for ID: " + body.getId());
@@ -55,7 +46,6 @@ public class BodyService {
     }
 
     @Transactional
-
     public Body deleteBodyStatsById(UUID id) throws EntityNotFoundException {
         if (!bodyRepository.existsById(id)) {
             throw new EntityNotFoundException("Body stats not found for ID: " + id);
