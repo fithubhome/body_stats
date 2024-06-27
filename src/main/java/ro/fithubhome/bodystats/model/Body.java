@@ -30,8 +30,8 @@ public class Body  {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     @JdbcTypeCode(Types.VARCHAR)
-
     private UUID id;
+
     @NotNull
     @Column(name = "starting_weight", nullable = false)
     private int startingWeight;

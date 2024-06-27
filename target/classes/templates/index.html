@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Body Stats</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5 text-center">
+    <h2 class="mb-4">Welcome to Body Stats Management</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <a href="/bodystats/history" class="btn btn-primary btn-lg btn-block">View Body Stats History</a>
+        </div>
+        <div class="col-md-6 mb-3">
+            <a href="/bodystats/new" class="btn btn-secondary btn-lg btn-block">Record New Body Stats</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="#{title.page}">Body Stats</title>
+    <link rel="stylesheet" href="/static/css/styles.css"> &lt;!&ndash; Corrected path for CSS file &ndash;&gt;
+    <script th:src="@{/static/js/validation.js}"></script> &lt;!&ndash; Example path for JavaScript validation file &ndash;&gt;
+</head>
+<body>
+
+<header>
+    <a th:href="@{/main-index.html}">Home</a> &lt;!&ndash; Corrected Thymeleaf link syntax &ndash;&gt;
+</header>
+
+<main>
+    <h2>Body Status</h2>
+    <a th:href="@{/bodystats-history.html}">-&#45;&#45; Display status -&#45;&#45;</a><br>
+    <a th:href="@{/bodystats-records.html}">-&#45;&#45; Enter status information -&#45;&#45;</a>
+    <p>Enter your data and click OK:</p>
+
+    <form method="post" th:action="@{/bodystats}" th:object="${bodyStatsDTO}" name="formular"
+          onsubmit="return validateForm()">
+        <h2 th:unless="${param.error}">Body Stats Form</h2>
+        <h2 th:if="${param.error}">Try again</h2>
+
+
+        <a th:href="@{/bodystats-history}">history</a><br>
+        <a th:href="@{/bodystats-records}">records</a>
+
+        <button type="submit">Submit data</button>
+        <button onclick="myFunction()">Save</button>
+        <button onclick="myFunction()">Cancel</button>
+</main>
+
+<footer>
+    <p>&copy; 2024 BodyStats API</p>
+</footer>
+</body>
+</html>
+-->

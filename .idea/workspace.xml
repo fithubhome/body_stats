@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="866ad5bd-ec62-43d3-8475-f13fa5e8e603" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/BeanConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/LocaleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/LocaleConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/model/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/repository/BodyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/repository/BodyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bodystats-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bodystats-history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bodystats-records.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bodystats-records.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,19 +48,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/rodilas/Documents/fithubhome/gym-web-app",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rodilas/Documents/fithubhome/gym-web-app&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ro.fithubhome.ui" />

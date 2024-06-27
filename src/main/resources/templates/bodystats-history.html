@@ -1,34 +1,58 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>BodyStats</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Stats History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<header>
-    <h1 style="color: white;">Welcome to FitHubHome</h1>
-</header>
-
-<a href="index.html">--- HOME ---</a>
-
-<div class="welcome-page">
-    <div class="content">
-        <div class="profile-details">
-            <p><strong>First Name:</strong> <span th:text="${body.id}"></span></p>
-            <p><strong>Last Name:</strong> <span th:text="${body.registerDay}"></span></p>
-            <p><strong>Gender:</strong> <span th:text="${body.startingWeight}"></span></p>
-        </div>
-
-        <div class="action-buttons">
-            <a th:href="@{/dashboard}">
-
-                <button>Back to Dashboard</button>
-            </a>
-        </div>
-    </div>
+<div class="container mt-5">
+    <h2 class="text-center">Body Stats History</h2>
+    <table class="table table-bordered mt-3">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Starting Weight</th>
+            <th>Register Day</th>
+            <th>BMI</th>
+            <th>Muscle Mass</th>
+            <th>Fat Percentage</th>
+            <th>Waist</th>
+            <th>Buttocks</th>
+            <th>Chest</th>
+            <th>Left Arm</th>
+            <th>Right Arm</th>
+            <th>Left Thigh</th>
+            <th>Right Thigh</th>
+            <th>Left Calf</th>
+            <th>Right Calf</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="body : ${bodies}">
+            <td th:text="${body.id}"></td>
+            <td th:text="${body.startingWeight}"></td>
+            <td th:text="${body.registerDay}"></td>
+            <td th:text="${body.bmi}"></td>
+            <td th:text="${body.muscleMass}"></td>
+            <td th:text="${body.fatPercentage}"></td>
+            <td th:text="${body.waist}"></td>
+            <td th:text="${body.buttocks}"></td>
+            <td th:text="${body.chest}"></td>
+            <td th:text="${body.leftArm}"></td>
+            <td th:text="${body.rightArm}"></td>
+            <td th:text="${body.leftThigh}"></td>
+            <td th:text="${body.rightThigh}"></td>
+            <td th:text="${body.leftCalf}"></td>
+            <td th:text="${body.rightCalf}"></td>
+            <td th:text="${body.startDate}"></td>
+            <td th:text="${body.endDate}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<footer>
-    <p>&copy; 2024 BodyStats API</p>
-</footer>
 </body>
 </html>

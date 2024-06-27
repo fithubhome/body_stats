@@ -15,6 +15,7 @@ import ro.fithubhome.bodystats.service.BodyService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/bodystats")
@@ -25,12 +26,7 @@ public class BodyController {
     //POST Create
     @PostMapping()
     @Validated
-/*
-    private String handleBodyStats(@Valid Body bodyStatsDTO) {
-        bodyService.createBodyStats(bodyStatsDTO);
-        return "/bodystats/data.html";
-    }
-*/
+
     public ResponseEntity<Body> createBodyStats(@Valid @RequestBody Body body) {
         Logger.logInfo(String.format("%s - received POST request", this.getClass().getSimpleName()));
 
@@ -55,16 +51,8 @@ public class BodyController {
         return "bodystats-history";
     }
 
-/*    @GetMapping("/records")
-        private ModelAndView getBodyStatsRecords() {
-            ModelAndView modelAndView = new ModelAndView("templates/bodystats-records.html");
-            modelAndView.addObject("bodyStatsRecords", bodyService.requestBodyStats(id));
-
-            return modelAndView;
-        }
-*/
     @GetMapping("/{id}")
-    public ResponseEntity<Body> requestedBodyStats(@PathVariable Integer id) {
+    public ResponseEntity<Body> requestedBodyStats(@PathVariable UUID id) {
         Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), id));
        try {
            Body requestedBodyStats = bodyService.getBodyStatsById(id).orElseThrow(() -> new EntityNotFoundException("Body stats"));
@@ -77,12 +65,7 @@ public class BodyController {
                     .status(404)
                     .body(null);
         }
-    /*   } catch (EntityNotFoundException ex) {
-        Logger.logError(String.format("%s - GET request failed for city \"%s\": \"%s\"", this.getClass().getSimpleName(), id, ex.getMessage()));
-        return ResponseEntity
-                .status(404)
-                .body(null);
-    }*/
+
     }
 
     @GetMapping()
@@ -113,7 +96,7 @@ public class BodyController {
 
     //DELETE
     @DeleteMapping("/{id}")
-    public ResponseEntity<Body> deleteBodyStats(@PathVariable Integer id) {
+    public ResponseEntity<Body> deleteBodyStats(@PathVariable UUID id) {
         Logger.logInfo(String.format("%s - received DELETE request for city: \"%s\"", this.getClass().getSimpleName(), id));
     try {
         bodyService.deleteBodyStatsById(id);

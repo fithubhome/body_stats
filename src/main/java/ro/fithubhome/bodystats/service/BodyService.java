@@ -11,6 +11,7 @@ import ro.fithubhome.bodystats.repository.BodyRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class BodyService {
@@ -25,6 +26,7 @@ public class BodyService {
             return bodyRepository.save(body);
         }
     }
+
     @Transactional(readOnly = true)
 
     public List<Body> getAllBodyStats() {
@@ -34,7 +36,7 @@ public class BodyService {
 
     @Transactional(readOnly = true)
 
-    public Optional<Body> getBodyStatsById(Integer id) throws EntityNotFoundException {
+    public Optional<Body> getBodyStatsById(UUID id) throws EntityNotFoundException {
         Optional<Body> body = bodyRepository.findById(id);
         if (body.isEmpty()) {
             throw new EntityNotFoundException("Body stats not found for ID: " + id);
@@ -51,18 +53,14 @@ public class BodyService {
         return bodyRepository.save(body);
     }
 
-@Transactional
+    @Transactional
 
-    public Body deleteBodyStatsById(Integer id) throws EntityNotFoundException {
+    public Body deleteBodyStatsById(UUID id) throws EntityNotFoundException {
         if (!bodyRepository.existsById(id)) {
             throw new EntityNotFoundException("Body stats not found for ID: " + id);
         }
         bodyRepository.deleteById(id);
         return null;
     }
-/*
-    public Body deleteBodyStats(String data) throws EntityNotFoundException {
-        return bodyRepository.deleteBodyStats(data);
-    }
-*/
+
 }

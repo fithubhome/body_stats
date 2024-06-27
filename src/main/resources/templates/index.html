@@ -3,83 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Body Stats</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5 text-center">
+    <h2 class="mb-4">Welcome to Body Stats Management</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+            <a href="/bodystats/history" class="btn btn-primary btn-lg btn-block">View Body Stats History</a>
+        </div>
+        <div class="col-md-6 mb-3">
+            <a href="/bodystats/new" class="btn btn-secondary btn-lg btn-block">Record New Body Stats</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="#{title.page}">Body Stats</title>
-    <link rel="stylesheet" href="/static/css/styles.css"> <!-- Corrected path for CSS file -->
-    <script th:src="@{/static/js/validation.js}"></script> <!-- Example path for JavaScript validation file -->
+    <link rel="stylesheet" href="/static/css/styles.css"> &lt;!&ndash; Corrected path for CSS file &ndash;&gt;
+    <script th:src="@{/static/js/validation.js}"></script> &lt;!&ndash; Example path for JavaScript validation file &ndash;&gt;
 </head>
 <body>
 
 <header>
-    <a th:href="@{/main-index.html}">Home</a> <!-- Corrected Thymeleaf link syntax -->
+    <a th:href="@{/main-index.html}">Home</a> &lt;!&ndash; Corrected Thymeleaf link syntax &ndash;&gt;
 </header>
 
 <main>
     <h2>Body Status</h2>
-    <a th:href="@{/bodystats-history.html}">--- Display status ---</a><br>
-    <a th:href="@{/bodystats-records.html}">--- Enter status information ---</a>
+    <a th:href="@{/bodystats-history.html}">-&#45;&#45; Display status -&#45;&#45;</a><br>
+    <a th:href="@{/bodystats-records.html}">-&#45;&#45; Enter status information -&#45;&#45;</a>
     <p>Enter your data and click OK:</p>
 
-    <form method="post" th:action="@{/bodystats}" th:object="${bodyStatsDTO}" name="formular" onsubmit="return validateForm()">
+    <form method="post" th:action="@{/bodystats}" th:object="${bodyStatsDTO}" name="formular"
+          onsubmit="return validateForm()">
         <h2 th:unless="${param.error}">Body Stats Form</h2>
         <h2 th:if="${param.error}">Try again</h2>
 
-        <!-- Remove duplicate form tags -->
-        <!-- Adjust input fields and labels according to your model -->
-        <label for="id">ID</label>
-        <input type="text" th:field="*{id}" placeholder="User Id">
-        <p id="error-message">ID must contain your customer ID number</p>
 
-        <label for="startingWeight">Starting Weight</label>
-        <input type="text" th:field="*{startingWeight}">
+        <a th:href="@{/bodystats-history}">history</a><br>
+        <a th:href="@{/bodystats-records}">records</a>
 
-        <label for="registerDay">Register Day</label>
-        <input type="text" th:field="*{registerDay}">
-
-        <label for="bmi">BMI</label>
-        <input type="text" th:field="*{bmi}">
-
-        <label for="muscleMass">Muscle Mass</label>
-        <input type="text" th:field="*{muscleMass}">
-
-        <label for="fatPercentage">Fat Percentage</label>
-        <input type="text" th:field="*{fatPercentage}">
-
-        <label for="waist">Waist</label>
-        <input type="text" th:field="*{waist}">
-
-        <label for="leftCalf">Left Calf</label>
-        <input type="text" th:field="*{leftCalf}">
-
-        <label for="chest">Chest</label>
-        <input type="text" th:field="*{chest}">
-
-        <label for="leftArm">Left Arm</label>
-        <input type="text" th:field="*{leftArm}">
-
-        <label for="rightArm">Right Arm</label>
-        <input type="text" th:field="*{rightArm}">
-
-        <label for="leftThigh">Left Thigh</label>
-        <input type="text" th:field="*{leftThigh}">
-
-        <label for="rightThigh">Right Thigh</label>
-        <input type="text" th:field="*{rightThigh}">
-
-        <label for="leftCalf">Left Calf</label>
-        <input type="text" th:field="*{leftCalf}">
-
-        <label for="rightCalf">Right Calf</label>
-        <input type="text" th:field="*{rightCalf}">
-
-        <input type="submit" value="Submit"/><br>
-    </form>
-
-    <a th:href="@{/bodystats-history}">history</a><br>
-    <a th:href="@{/bodystats-records}">records</a>
-
-    <button type="submit">Submit data</button>
-    <button onclick="myFunction()">Save</button>
-    <button onclick="myFunction()">Cancel</button>
+        <button type="submit">Submit data</button>
+        <button onclick="myFunction()">Save</button>
+        <button onclick="myFunction()">Cancel</button>
 </main>
 
 <footer>
@@ -87,3 +64,4 @@
 </footer>
 </body>
 </html>
+-->
