@@ -9,7 +9,7 @@ public class DateFormatterConfig implements WebMvcConfigurer {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addFormatter(new org.springframework.format.datetime.DateFormatter("yyyy-MM-dd"));
+        registry.addFormatter(new org.springframework.format.datetime.DateFormatter("dd-MM-yyyy"));
     }
 }
 

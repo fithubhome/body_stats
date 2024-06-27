@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Types;
 import java.util.Date;
@@ -21,8 +22,10 @@ public class BodyStats {
     @Id
     @JdbcTypeCode(Types.VARCHAR)
     private UUID id;
-
+    @JdbcTypeCode(Types.VARCHAR)
     private UUID profileId;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date registerDay;
     private Double bmi;
     private Double weight;

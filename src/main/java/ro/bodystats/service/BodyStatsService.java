@@ -11,7 +11,6 @@ import java.util.UUID;
 
 @Service
 public class BodyStatsService {
-
     @Autowired
     private BodyStatsRepository bodyStatsRepository;
 
