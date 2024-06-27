@@ -18,13 +18,14 @@ public class BodyService {
     @Autowired
     private BodyRepository bodyRepository;
 
+
     @Transactional
     public Body createBodyStats(Body body) throws EntityAlreadyExistsException {
-        if (bodyRepository.existsById(body.getId())) {
+       /* if (bodyRepository.existsById(body.getId())) {
             throw new EntityAlreadyExistsException("Body stats with this ID already exists.");
-        } else {
+        } else {*/
             return bodyRepository.save(body);
-        }
+
     }
 
     @Transactional(readOnly = true)

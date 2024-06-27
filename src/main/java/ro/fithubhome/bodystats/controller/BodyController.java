@@ -25,9 +25,7 @@ public class BodyController {
 
     //POST Create
     @PostMapping()
-    @Validated
-
-    public ResponseEntity<Body> createBodyStats(@Valid @RequestBody Body body) {
+    public ResponseEntity<Body> createBodyStats( @ModelAttribute Body body) {
         Logger.logInfo(String.format("%s - received POST request", this.getClass().getSimpleName()));
 
         try {
@@ -47,10 +45,14 @@ public class BodyController {
 
     @GetMapping("/history")
     public String getBodyStatsHistory(Model model) {
-        model.addAttribute("body", new Body());
+        model.addAttribute("body", bodyService.getAllBodyStats());
         return "bodystats-history";
     }
-
+    @GetMapping("/record")
+    public String getBodyStatsRecords(Model model, Body body) {
+    //    model.addAttribute("body", bodyService.getAllBodyStats());
+        return "bodystats-records";
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Body> requestedBodyStats(@PathVariable UUID id) {
         Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), id));
@@ -114,7 +116,7 @@ public class BodyController {
     @ExceptionHandler(Exception.class)
     private String handleException(Exception ex) {
         System.err.println("Exception in controller" + ex);
-        return "error.html";
+        return "error";
     }
 
 

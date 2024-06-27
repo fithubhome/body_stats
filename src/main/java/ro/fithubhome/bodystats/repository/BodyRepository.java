@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 import ro.fithubhome.bodystats.model.Body;
 import java.util.UUID;
 
-@Repository
-    public interface BodyRepository extends JpaRepository<Body, UUID> {
 
+    public interface BodyRepository extends JpaRepository<Body, UUID> {
         boolean existsById(UUID id);
     }

@@ -5,36 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="866ad5bd-ec62-43d3-8475-f13fa5e8e603" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mesages_RO.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/messages.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/Application.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/RootErrorController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/ViewConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/controller/BodyController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/exception/EntityAlreadyExistsException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/exception/EntityNotFoundException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/model/Body.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/repository/BodyRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/service/BodyService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/service/Logger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/bodystats-history.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/bodystats-records.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/main-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/BeanConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/config/RootController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/repository/BodyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/repository/BodyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/service/BodyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bodystats-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bodystats-history.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/bodystats-records.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/bodystats-records.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/body-stats-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/BeanConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/RootController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/config/RootErrorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/controller/BodyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/controller/BodyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/model/Body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/model/Body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/repository/BodyRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/repository/BodyRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/service/BodyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ro/fithubhome/bodystats/service/BodyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bodystats-history.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bodystats-history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/bodystats-records.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/bodystats-records.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +44,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,19 +65,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "api__v2",
-    "last_opened_file_path": "C:/Users/rodilas/Documents/fithubhome/gym-web-app",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;api__v2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rodilas/Documents/fithubhome/gym-web-app&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ro.fithubhome.ui" />
@@ -131,6 +129,41 @@
       <option name="presentableId" value="Default" />
       <updated>1714046901246</updated>
     </task>
+    <task id="LOCAL-00001" summary="gitignore file">
+      <option name="closed" value="true" />
+      <created>1719507649934</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719507649934</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore file" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ro/fithubhome/bodystats/controller/BodyController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

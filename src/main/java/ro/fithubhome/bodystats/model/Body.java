@@ -87,6 +87,7 @@ public class Body  {
     @NotNull
     @Column(name = "right_calf", nullable = false)
     private int rightCalf;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date startDate;
     @Temporal(TemporalType.TIMESTAMP)

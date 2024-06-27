@@ -1,3 +1,4 @@
+/*
 package ro.fithubhome.bodystats.config;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RootController implements ErrorController {
     @RequestMapping("error")
     private String handleError() {
-        return "error/error.html";
+        return "error";
     }
 
     @GetMapping("/")
@@ -17,3 +18,4 @@ public class RootController implements ErrorController {
         return "index";
     }
 }
+*/
