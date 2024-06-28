@@ -9,7 +9,7 @@
 ##COPY target/random-backend-1.0-SNAPSHOT.jar app/random-backend.jar
 #
 ## SET PROJECT EXECUTION COMMAND:
-##ENTRYPOINT ["java", "-jar", "app/body-stats.jar"]
+##ENTRYPOINT ["java", "-jar", "app/bodystats-stats.jar"]
 #
 ## BUILD IMAGE: docker build -t random_image .
 ## RUN CONTAINER: docker run -dp 9090:8080 --name random_container random_image
@@ -34,7 +34,7 @@
 #WORKDIR /app
 #
 ## Copy the packaged jar file from the build stage
-#COPY --from=build /app/target/body-stats-1.0-SNAPSHOT.jar app.jar
+#COPY --from=build /app/target/bodystats-stats-1.0-SNAPSHOT.jar app.jar
 #
 ## Expose the application port
 #EXPOSE 8095
@@ -47,5 +47,5 @@
 ########################################################################################################################
 
 FROM openjdk:17-jdk-alpine
-COPY target/body-stats-1.0-SNAPSHOT.jar app/app.jar
+COPY target/bodystats-stats-1.0-SNAPSHOT.jar app/app.jar
 ENTRYPOINT ["java","-jar","/app/app.jar"]

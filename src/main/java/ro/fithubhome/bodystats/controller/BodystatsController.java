@@ -4,35 +4,32 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ro.fithubhome.bodystats.exception.EntityAlreadyExistsException;
 import ro.fithubhome.bodystats.exception.EntityNotFoundException;
+import ro.fithubhome.bodystats.model.Bodystats;
 import ro.fithubhome.bodystats.service.Logger;
-import ro.fithubhome.bodystats.model.Body;
-import ro.fithubhome.bodystats.service.BodyService;
-
-import java.util.List;
+import ro.fithubhome.bodystats.service.BodystatsService;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("")
-public class BodyController {
+public class BodystatsController {
     @Autowired
-    private BodyService bodyService;
+    private BodystatsService bodystatsService;
 
     @GetMapping("/record")
-    public void createBodyStats(@RequestBody Body body) throws EntityAlreadyExistsException {
+    public void createBodyStats(@RequestBody Bodystats bodystats) {
         Logger.logInfo(String.format("%s - received POST request", this.getClass().getSimpleName()));
-        bodyService.createBodyStats(body);
+        bodystatsService.createBodyStats(bodystats);
     }
 
     @GetMapping()
-    public ResponseEntity<Body> requestedBodyStats(@RequestBody UUID profileId) {
+    public ResponseEntity<Bodystats> requestedBodyStats(@RequestBody UUID profileId) {
         Logger.logInfo(String.format("%s - received GET request for city: \"%s\"", this.getClass().getSimpleName(), profileId));
         try {
-            Body requestedBodyStats = bodyService.getBodyStatsById(profileId).orElseThrow(() -> new EntityNotFoundException("Body stats"));
+            Bodystats requestedBodystatsStats = bodystatsService.getBodyStatsById(profileId).orElseThrow(() -> new EntityNotFoundException("Bodystats stats"));
             return ResponseEntity
                     .status(200)
-                    .body(requestedBodyStats);
+                    .body(requestedBodystatsStats);
         } catch (EntityNotFoundException ex) {
             Logger.logError(String.format("%s - GET request failed for ID \"%s\": \"%s\"", this.getClass().getSimpleName(), profileId, ex.getMessage()));
             return ResponseEntity
@@ -42,13 +39,13 @@ public class BodyController {
     }
 
     @PutMapping()
-    public ResponseEntity<Body> updateBodyStatsForUser(@Valid @RequestBody Body body) throws EntityNotFoundException {
+    public ResponseEntity<Bodystats> updateBodyStatsForUser(@Valid @RequestBody Bodystats bodystats) {
         Logger.logInfo(String.format("%s - received PUT request", this.getClass().getSimpleName()));
         try {
-            Body updateBodyStats = bodyService.updateBodyStats(body);
+            Bodystats updateBodystatsStats = bodystatsService.updateBodyStats(bodystats);
             return ResponseEntity
                     .status(200)
-                    .body(updateBodyStats);
+                    .body(updateBodystatsStats);
         } catch(EntityNotFoundException ex) {
         Logger.logError(String.format("%s - PUT request failed: \"%s\"", this.getClass().getSimpleName(), ex.getMessage()));
         return ResponseEntity
@@ -58,10 +55,10 @@ public class BodyController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Body> deleteBodyStats(@PathVariable UUID id) {
+    public ResponseEntity<Bodystats> deleteBodyStats(@PathVariable UUID id) {
         Logger.logInfo(String.format("%s - received DELETE request for city: \"%s\"", this.getClass().getSimpleName(), id));
     try {
-        bodyService.deleteBodyStatsById(id);
+        bodystatsService.deleteBodyStatsById(id);
         return ResponseEntity
                 .status(204)
                 .body(null);

@@ -1,11 +1,11 @@
 package ro.fithubhome.bodystats.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import ro.fithubhome.bodystats.model.Body;
+import ro.fithubhome.bodystats.model.Bodystats;
+
 import java.util.UUID;
 
 
-    public interface BodyRepository extends JpaRepository<Body, UUID> {
+    public interface BodystatsRepository extends JpaRepository<Bodystats, UUID> {
         boolean existsById(UUID id);
     }
