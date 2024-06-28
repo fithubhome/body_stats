@@ -17,7 +17,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Setter
 @Getter
-public class Bodystats {
+public class BodyStats {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
