@@ -4,7 +4,6 @@ package ro.fithubhome.bodystats.service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ro.fithubhome.bodystats.exception.EntityAlreadyExistsException;
 import ro.fithubhome.bodystats.exception.EntityNotFoundException;
 import ro.fithubhome.bodystats.model.Body;
 import ro.fithubhome.bodystats.repository.BodyRepository;
@@ -19,8 +18,8 @@ public class BodyService {
     private BodyRepository bodyRepository;
 
     @Transactional
-    public Body createBodyStats(Body body) throws EntityAlreadyExistsException {
-            return bodyRepository.save(body);
+    public void createBodyStats(Body body)  {
+        bodyRepository.save(body);
     }
 
     @Transactional(readOnly = true)

@@ -1,3 +1,36 @@
+version: '3'
+
+services:
+
+  body-stats-api-app:
+    build: .                          # Use Dockerfile to build image
+    image: body-stats-api:latest      # Name of the resulting image
+    container_name: application       # Name of the resulting container
+    ports:                            # External/internal port mapping:
+      - 8095:8095
+    depends_on:                       # Service(s) that this service depends on:
+      body-stats-api-db:
+        condition: service_healthy
+    networks:                         # Local network for services (containers)
+      - network
+
+  body-stats-api-db:
+    image: mysql:latest               # Image used to create container (from Docker registry)
+    container_name: database
+    environment:                      # Environment variables for the service (container):
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=bodystats
+    healthcheck:                      # Command that, when ran, proves service (container) is healthy
+      test: [ "CMD", "echo", "MySQL database container is healthy" ]
+    networks:
+      - network
+
+networks:
+
+  network:
+    driver: bridge
+
+
 ########################################################################################################################
 #   OLD CONFIG                                                                                                         #
 ########################################################################################################################
@@ -48,35 +81,3 @@
 ########################################################################################################################
 #   NEW CONFIG                                                                                                         #
 ########################################################################################################################
-
-version: '3'
-
-services:
-
-  body-stats-api-app:
-    build: .                          # Use Dockerfile to build image
-    image: body-stats-api:latest      # Name of the resulting image
-    container_name: application       # Name of the resulting container
-    ports:                            # External/internal port mapping:
-      - 8095:8095
-    depends_on:                       # Service(s) that this service depends on:
-      body-stats-api-db:
-        condition: service_healthy
-    networks:                         # Local network for services (containers)
-      - network
-
-  body-stats-api-db:
-    image: mysql:latest               # Image used to create container (from Docker registry)
-    container_name: database
-    environment:                      # Environment variables for the service (container):
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=bodystats
-    healthcheck:                      # Command that, when ran, proves service (container) is healthy
-      test: [ "CMD", "echo", "MySQL database container is healthy" ]
-    networks:
-      - network
-
-networks:
-
-  network:
-    driver: bridge
